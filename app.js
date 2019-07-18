@@ -29,7 +29,7 @@ new Vue({
     move:function(e){
       switch(e.code){
         case 'ArrowUp':
-          if(this.playerIndex-30>0){
+          if(this.playerIndex-30>=0){
             if(this.blocks[this.playerIndex-30].content==''){
               this.blocks[this.playerIndex].content = '';
               this.blocks[this.playerIndex-30].content = '@';
