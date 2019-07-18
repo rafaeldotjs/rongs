@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+    #menu{
+      text-align: center;
+    }
+
+    #canvas{
+      border-top: 1px solid #000;
+      border-left: 1px solid #000;
+      box-sizing: border-box;
+      width:901px;
+      margin:0 auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .blocks{
+      width:30px;
+      height: 30px;
+      padding-top: 6px;
+      border-right:1px solid #000;
+      border-bottom: 1px solid #000;
+      box-sizing: border-box;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div id="menu">
+      <button @click="generate()">Start</button>
+    </div>
+    <div id="canvas">
+      <div class="blocks" :id="'block-'+block.index" v-for="block in blocks" :style="{backgroundColor:block.terrain,color:(block.content==''?block.backgroundContentColor:block.contentColor)}">
+        {{block.content==''?block.backgroundContent:block.content}}
+      </div>
+    </div>
+  </div>
+  <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
